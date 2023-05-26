@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py=6">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Django App</h1>
+    
+        <p><strong>
+            This is an example of a simple page that you can use to
+            create tasks and manage them.
+        </strong></p>
+        {% lorem 3 p random %}
+        {% if user.is_authenticated == False %}
+        <h2>
+            Please, register or Log In and create some Tasks.
+        </h2>
+        <div class="text-center">
+            <a class="btn btn-primary" href="/signin">
+                Sign In
+            </a>
+            <a class="btn btn-dark" href="/signup">
+                Sign Up
+            </a>
+        </div>  
+        {% endif %}
+    </section>
+</main>
+
+{% endblock %}

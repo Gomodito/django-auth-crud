@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>{{task.title}}</h1>
+            <form method="POST" class="card card-body">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>
+                    Update
+                </button>
+            </form>
+
+            <form action="{% url 'complete_task' task.id %}" method="POST" class="card card-body">
+                {% csrf_token %}
+                <button>
+                    Complete
+                </button>
+            </form>
+
+            <form action="{% url 'delete_task' task.id %}" method="POST" class="card card-body">
+                {% csrf_token %}
+                <button>
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+    
+
+{% endblock  %}
