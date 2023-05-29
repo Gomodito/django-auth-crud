@@ -9,10 +9,9 @@
             <form method="POST" class="card card-body">
 
                 <h1>Sign Up</h1>
-            
-                {{error}}
-            
                 {% csrf_token %}
+                {{error}}
+                
                 {{form}}
                 <button>
                     Sign Up

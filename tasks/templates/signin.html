@@ -8,8 +8,8 @@
         <div class="col-md-6 offset-md-3">
             <form action="/signin/" method="POST" class="card card-body">
                 <h1> Sign In </h1>
-                {{error}}
                 {% csrf_token %}
+                {{error}}
                 {{form.as_p}}
                 <button>
                     Sign In
